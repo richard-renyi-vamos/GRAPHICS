@@ -1,0 +1,10 @@
+from turtle import *
+color('green', 'blue')
+begin_fill()
+while True:
+    forward(100)
+    left(150)
+    if pos() < 1:
+        break
+end_fill()
+done()
