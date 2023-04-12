@@ -1,0 +1,21 @@
+import cv2
+import face_recognition
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the image
+image = cv2.imread('picture.jpg')
+
+# Find faces in the image
+face_locations = face_recognition.face_locations(image)
+
+# Draw boxes around the faces
+for face_location in face_locations:
+    top, right, bottom, left = face_location
+    cv2.rectangle(image, (left, top), (right, bottom), (0, 255, 0), 2)
+
+# Show the image
+plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+plt.show()
+
+# CREATED WITH THE HELP OF OPEN-AI CHAT GPT: https://chat.openai.com/chat
