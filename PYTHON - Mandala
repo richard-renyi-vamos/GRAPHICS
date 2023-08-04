@@ -1,0 +1,31 @@
+import turtle
+
+def draw_flower():
+    for _ in range(8):
+        turtle.forward(100)
+        turtle.backward(100)
+        turtle.left(45)
+
+def draw_mandala():
+    for _ in range(8):
+        draw_flower()
+        turtle.forward(100)
+        turtle.right(45)
+
+def main():
+    screen = turtle.Screen()
+    screen.bgcolor("white")
+
+    turtle.speed(0)
+    turtle.pensize(2)
+    turtle.color("black")
+
+    draw_mandala()
+
+    turtle.hideturtle()
+    turtle.done()
+
+if __name__ == "__main__":
+    main()
+
+# CREATED WITH THE HELP OF OPEN-AI CHAT GPT: https://chat.openai.com/chat
