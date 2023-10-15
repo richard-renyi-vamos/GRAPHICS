@@ -1,0 +1,36 @@
+import turtle
+import random
+
+# Set up the Turtle screen
+screen = turtle.Screen()
+screen.bgcolor("white")
+
+# Create a Turtle object
+flower = turtle.Turtle()
+flower.shape("turtle")
+flower.speed(0)  # Set the drawing speed (0 is the fastest)
+
+# Define a list of different colors for the petals
+petal_colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "cyan", "magenta", "violet"]
+
+# Function to draw a petal
+def draw_petal(radius, color):
+    flower.fillcolor(color)
+    flower.begin_fill()
+    flower.circle(radius, 60)  # Drawing a partial circle as a petal
+    flower.left(120)
+    flower.circle(radius, 60)
+    flower.end_fill()
+
+# Draw the flower with 10 different-colored petals
+for _ in range(10):
+    petal_radius = random.randint(50, 100)  # Random petal size
+    petal_color = random.choice(petal_colors)
+    draw_petal(petal_radius, petal_color)
+    flower.right(36)  # Rotate for the next petal
+
+# Hide the Turtle and display the result
+flower.hideturtle()
+screen.exitonclick()
+
+# CREATED WITH THE HELP OF OPEN-AI CHAT GPT: https://chat.openai.com/chat
